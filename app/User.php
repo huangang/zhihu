@@ -7,6 +7,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Mail;
 use Naux\Mail\SendCloudTemplate;
 
+/**
+ * @property int id 用户ID
+ * @property string name 真正的名字
+ * @property string password 密码
+ * @property string avatar 头像
+ * @property string confirmation_token 确认token
+ */
 class User extends Authenticatable
 {
     use Notifiable;
