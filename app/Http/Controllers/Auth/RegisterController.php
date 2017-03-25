@@ -83,10 +83,15 @@ class RegisterController extends Controller
         // 模板变量
         $bind_data = ['url' => route('email.verify',['token '=> $user->confirmation_token]),
             'name' => $user->name];
+        /**
+         * 你好 %name%
+         * 点击地址去确认你的邮箱: %url%
+         */
+
         $template = new SendCloudTemplate('zhihu_app_register', $bind_data);
 
         Mail::raw($template, function ($message) use ($user) {
-            $message->from('zhihu@huangang.net', 'zhihu');
+            $message->from('postmaster@zhihu.dev', 'zhihu');
 
             $message->to($user->email);
         });
