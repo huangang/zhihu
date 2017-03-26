@@ -35,4 +35,22 @@ class Question extends Model
     public function topics(){
         return $this->belongsToMany(Topic::class)->withTimestamps();
     }
+
+    /**
+     * 用户
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * published 是否发布
+     * @param $query
+     * @return self
+     */
+    public function scopePublished($query){
+        return $query->where('is_hidden', 'F');
+    }
+
 }

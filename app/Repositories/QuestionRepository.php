@@ -56,4 +56,12 @@ class QuestionRepository
             return $newTopic->id;
         })->toArray();
     }
+
+    /**
+     * 问题流
+     * @return mixed
+     */
+    public function getQuestionFeed(){
+        return Question::published()->latest('updated_at')->with('user')->get();
+    }
 }
