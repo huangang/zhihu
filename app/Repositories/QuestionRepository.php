@@ -9,13 +9,13 @@ class QuestionRepository
 {
 
     /**
-     * 通过问题ID查询问题和话题
+     * 通过问题ID查询问题和话题和答案
      * @param $id
      * @return mixed
      */
-    public function byIdWithTopics($id)
+    public function byIdWithTopicsAndAnswers($id)
     {
-        return $question = Question::where('id', $id)->with(['topics'])->first();
+        return $question = Question::where('id', $id)->with(['topics', 'answers'])->first();
     }
 
     /**

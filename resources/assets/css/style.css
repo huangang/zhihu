@@ -1,5 +1,5 @@
-.panel-body img{
-    width: 100%;
+.panel-body.content img{
+    width:100%;
 }
 a.topic{
     background: #eff6fa;
