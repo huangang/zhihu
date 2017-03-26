@@ -53,4 +53,13 @@ class Question extends Model
         return $query->where('is_hidden', 'F');
     }
 
+    /**
+     * 答案
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
+    }
+
 }

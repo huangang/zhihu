@@ -70,4 +70,12 @@ class User extends Authenticatable
     {
         return $this->id == $model->user_id;
     }
+
+    /**
+     * 答案
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function answers(){
+        return $this->hasMany(Answer::class);
+    }
 }
