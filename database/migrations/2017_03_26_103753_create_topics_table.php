@@ -19,6 +19,7 @@ class CreateTopicsTable extends Migration
             $table->text('bio')->nullable()->comment('话题简介');
             $table->integer('questions_count')->default(0)->comment('问题数量');
             $table->integer('followers_count')->default(0)->comment('关注者数量');
+            $table->timestamps();
         });
     }
 
