@@ -19,6 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::middleware('api')->get('/topics', function (Request $request) {
     return $topic = \App\Topic::select(['id','name'])
-        ->where('name','like','%'.$request->query('q').'%')
+        ->where('name', 'like', '%' . $request->query('q') . '%')
         ->get();
 });
